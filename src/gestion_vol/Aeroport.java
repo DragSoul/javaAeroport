@@ -1,15 +1,19 @@
 package gestion_vol;
 
+import java.util.List;
 import java.util.ArrayList;
 
 public class Aeroport{
 
     private String nom;
-    private ArrayList<Ville> dessert;
+    private Ville ville;
+    private List<Ville> dessert;
 
-    public Aeroport(String nom, ArrayList<Ville> dessert){
+    public Aeroport(String nom, Ville v){
         this.nom = nom;
-        this.dessert = dessert;
+        this.ville = v;
+        this.dessert = new ArrayList<>();
+        this.ville.ajouterAeroport(this);
     }
     
 }
