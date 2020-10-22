@@ -67,7 +67,15 @@ public class Main{
         c.creerVol(d31, d32, a4, a1);
         c.creerVol(d41, d42, a6, a5);
         c.creerVol(d51, d52, a6, a3);
+        
+
+        /* inventation d'escales */
+        Escale e1 = new Escale(d51, d12, a1);
+        c.addEscale(e1, 1);
         System.out.println(c);
+        Client iencli= new Client("Gérard");
+        iencli.ajoutPaiement(Paiement.PAYPAL);
+        System.out.println(iencli);
 
     }
 }

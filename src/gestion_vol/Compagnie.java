@@ -1,20 +1,17 @@
 package gestion_vol;
 
 import java.time.ZonedDateTime;
-import java.util.List;
+import java.util.Collection;
 import java.util.ArrayList;
 
 public class Compagnie{
 
     private String nom;
-    private List<Vol> vols;
-
-    
+    private Collection<Vol> vols = new ArrayList<>();
 
 
     public Compagnie(String nom){
         this.nom = nom;
-        vols = new ArrayList<>();
     }
 
     public void creerVol(ZonedDateTime depart, ZonedDateTime arrivee, Aeroport aeroport1, Aeroport aeroport2){
@@ -26,6 +23,14 @@ public class Compagnie{
         vols[num].clone().le(dated).arrivee(datea);
         
     }*/
+
+    public void addEscale(Escale e, int id){
+        for(Vol v:vols){
+            if(v.getNumero() == id){
+                v.addEscale(e);
+            }
+        }
+    }
 
     public String toString(){
         String s = "";
