@@ -15,5 +15,12 @@ public class Aeroport{
         this.dessert = new ArrayList<>();
         this.ville.ajouterAeroport(this);
     }
+
+    public void addDesservi(Ville v){
+        dessert.add(v);
+    }
     
+    public String toString(){
+        return ""+ville;
+    }
 }

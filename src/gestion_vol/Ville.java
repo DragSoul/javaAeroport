@@ -15,4 +15,8 @@ public class Ville{
     public void ajouterAeroport(Aeroport a){
         this.desservi.add(a);
     }
+
+    public String toString(){
+        return ""+nom;
+    }
 }

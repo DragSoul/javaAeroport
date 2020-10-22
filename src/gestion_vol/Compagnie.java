@@ -17,7 +17,7 @@ public class Compagnie{
         vols = new ArrayList<>();
     }
 
-    private void creerVol(ZonedDateTime depart, ZonedDateTime arrivee, Aeroport aeroport1, Aeroport aeroport2){
+    public void creerVol(ZonedDateTime depart, ZonedDateTime arrivee, Aeroport aeroport1, Aeroport aeroport2){
         vols.add(new Vol(depart, arrivee, aeroport1, aeroport2));
         //return new Vol(510).le(15/01/2020).a(clermont).arrive(15/01/2020).a(nevers).passantpar()
     }
@@ -26,6 +26,14 @@ public class Compagnie{
         vols[num].clone().le(dated).arrivee(datea);
         
     }*/
+
+    public String toString(){
+        String s = "";
+        for(Vol v : vols){
+            s = s + v +"\n";
+        }
+        return s;
+    }
 
 
 }
