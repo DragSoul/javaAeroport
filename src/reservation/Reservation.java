@@ -10,9 +10,9 @@ public class Reservation {
     private ZonedDateTime date;
     private Passager p;
 
-    public Reservation(){
+    public Reservation(int numeroVol){
         this.date = ZonedDateTime.now();
-        Passager p; 
+        
     }
    
 
