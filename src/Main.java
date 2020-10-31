@@ -61,6 +61,9 @@ public class Main{
         ZonedDateTime d51 = ZonedDateTime.of(2020, 10, 15, 21, 6, 00, 00, zoneId);
         ZonedDateTime d52 = ZonedDateTime.of(2020, 10, 16, 5, 47, 00, 00, zoneId);
 
+        ZonedDateTime d61 = ZonedDateTime.of(2021, 10, 15, 13, 24, 00, 00, zoneId);
+        ZonedDateTime d62 = ZonedDateTime.of(2021, 10, 15, 14, 36, 00, 00, zoneId);
+
         /* création des vols */
         c.creerVol(d11, d12, a1, a3);
         c.creerVol(d21, d22, a2, a4);
@@ -72,10 +75,19 @@ public class Main{
         /* inventation d'escales */
         Escale e1 = new Escale(d51, d12, a1);
         c.addEscale(e1, 1);
+
+        /* print toute la compagnie */
         System.out.println(c);
+
+        /* test du package reservation */
         Client iencli= new Client("Gérard");
         iencli.ajoutPaiement(Paiement.PAYPAL);
-        System.out.println(iencli);
+        Passager p1 = new Passager("Uml");
+
+        /* Création de réservations */
+        Vol chiant = new Vol(d61,d62,a1,a3);
+        Reservation r1 = new Reservation(iencli,p1,chiant);
+        System.out.println(r1);
 
     }
 }

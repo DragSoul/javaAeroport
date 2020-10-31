@@ -9,6 +9,7 @@ import java.time.format.DateTimeFormatter;
 
 
 public class Vol {
+    private boolean estOuvert; 
     private static int num = 0;
     private int numero;
     private ZonedDateTime dateDepart;
@@ -30,16 +31,23 @@ public class Vol {
         this.dateArrivee = dateArrivee;
         this.depart = a1;
         this.arrivee = a2;
+        this.estOuvert = false;
     }
 
-
-
-    private void ouvrir(){
-
+    public boolean getEtatOuverture(){
+        return this.estOuvert;
     }
 
-    private void fermer(){
+    public void ouvrir(){
+        this.estOuvert = true;
+    }
 
+    public void fermer(){
+        this.estOuvert = false;
+    }
+
+    public ZonedDateTime getDateDepart(){
+        return this.dateDepart;
     }
 
     public int getNumero(){

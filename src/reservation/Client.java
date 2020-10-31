@@ -17,12 +17,17 @@ public class Client{
         this.paiement = p;
     }
 
-    public void effectue(String nom){
-        Reservation r = new Reservation();
-        
+    public void reserve(Reservation r){
+        this.references.add(r);
     }
 
     public String toString(){
-        return ""+nom+"\npaiement : "+paiement;
+        return ""+nom;
+    }
+
+    public void printReservations(){
+        for(Reservation r : this.references){
+            System.out.println(r.toString());
+        }
     }
 }
